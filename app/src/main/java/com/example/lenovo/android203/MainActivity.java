@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-            // Should we show an explanation?
+            
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
 
                 // Show an explanation to the user *asynchronously* -- don't block
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
 
-                // No explanation needed, we can request the permission.
+                //  we can request the permission.
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
 
                 // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    // permission was granted, yay! Do the
+                    // permission was granted, Do the
                     // contacts-related task you need to do.
                     // Since reading contacts takes more time, let's run it on a separate thread.
                     //contactId.setText(String.valueOf(getContactID(getContentResolver(), "8285385442")));
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                 } else {
 
-                    // permission denied, boo! Disable the
+                    // permission denied, Disable the
                     // functionality that depends on this permission.
                     Toast.makeText(this, "You've denied the required permission.", Toast.LENGTH_LONG);
                 }
